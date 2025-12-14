@@ -2,10 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
 import { projects } from "../data/projects";
+import Header from "../components/Header";
 
 const Projects = () => {
   return (
     <main className="min-h-screen bg-white text-gray-900">
+      <Header />
       {/* Header Section */}
       <section className="max-w-5xl mx-auto px-4 sm:px-0 pt-20 pb-10 border-b border-gray-200">
         <div className="flex flex-col md:flex-row items-center justify-between">

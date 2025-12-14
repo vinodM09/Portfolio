@@ -1,23 +1,38 @@
+// React imports and hooks
 import React, { useRef, useState } from "react";
+// EmailJS for handling email sending
 import emailjs from "@emailjs/browser";
+// Icons and UI components
 import { FaEnvelope } from "react-icons/fa";
 import { Snackbar, Alert } from "@mui/material";
 
+/**
+ * ContactMe Component
+ * A form for users to send messages via EmailJS, with a direct email option.
+ */
 export default function ContactMe() {
+  // Ref for the form element
   const form = useRef(null);
+  // State to track if the email is currently being sent
   const [isSending, setIsSending] = useState(false);
+  // State for the toast notification
   const [toast, setToast] = useState({
     open: false,
     message: "",
     type: "success",
   });
 
+  /**
+   * Handles the form submission to send an email.
+   * @param {React.FormEvent} e - The form submission event.
+   */
   const sendEmail = (e) => {
     e.preventDefault();
     setIsSending(true);
 
     if (!form.current) return;
 
+    // Sending the form data using EmailJS
     emailjs
       .sendForm(
         import.meta.env.VITE_EMAILJS_SERVICE_ID,
@@ -27,6 +42,7 @@ export default function ContactMe() {
       )
       .then(
         () => {
+          // On success, show a success toast and reset the form
           setToast({
             open: true,
             message: "Message sent successfully!",
@@ -36,6 +52,7 @@ export default function ContactMe() {
           form.current?.reset();
         },
         () => {
+          // On failure, show an error toast
           setToast({
             open: true,
             message: "Failed to send message. Try again.",
@@ -49,6 +66,7 @@ export default function ContactMe() {
   return (
     <div className="max-w-7xl bg-white text-gray-900 font-sans">
       <main className="w-full mx-auto md:px-6 pb-16">
+        {/* Contact form section */}
         <section className="relative py-20 px-4 md:px-0 text-left">
           <h2 className="text-3xl mb-4">Get In Touch</h2>
           <p className="text-gray-600 mb-10">
@@ -56,11 +74,13 @@ export default function ContactMe() {
             the form below, and I’ll get back to you soon.
           </p>
 
+          {/* Contact form */}
           <form
             ref={form}
             onSubmit={sendEmail}
             className="flex flex-col space-y-4"
           >
+            {/* Name and Email input fields */}
             <div className="flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0">
               <input
                 type="text"
@@ -78,6 +98,7 @@ export default function ContactMe() {
               />
             </div>
 
+            {/* Message textarea */}
             <textarea
               name="message"
               placeholder="Your Message"
@@ -85,6 +106,7 @@ export default function ContactMe() {
               className="border p-3 rounded-lg bg-transparent h-32 focus:outline-none focus:ring-2 focus:ring-black"
             />
 
+            {/* Submit button */}
             <button
               type="submit"
               disabled={isSending}
@@ -95,6 +117,7 @@ export default function ContactMe() {
           </form>
         </section>
 
+        {/* Direct email section */}
         <section className="max-w-7xl mx-auto border-b border-gray-200 text-white px-4 md:px-0 py-10">
           <div className="pb-6 px-4 bg-black rounded-3xl mx-auto py-10">
             <h2 className="text-3xl font-normal text-start mb-4">
@@ -110,7 +133,7 @@ export default function ContactMe() {
         </section>
       </main>
 
-      {/* Toast Notification */}
+      {/* Toast notification for feedback */}
       <Snackbar
         open={toast.open}
         autoHideDuration={3000}
