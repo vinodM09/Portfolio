@@ -1,5 +1,5 @@
 // React and Router imports
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 // Data and component imports
 import { blogs } from "../data/blogs";
@@ -64,6 +64,34 @@ const BlogDetail = () => {
             <span>{blog.date}</span>|
             <span>{blog.readTime}</span>
           </div>
+
+          {/* Related Project */}
+          {blog.relatedProject && (
+            <div className="mb-10">
+              <Link
+                to={`/project/${blog.relatedProject.id}`}
+                className="group inline-flex items-center gap-3 border border-gray-200 rounded-xl px-5 py-4 hover:border-gray-400 transition"
+              >
+                <div>
+                  <p className="text-xs uppercase tracking-wide text-gray-500 mb-1">
+                    Related Project
+                  </p>
+                  <p className="text-lg font-medium text-gray-900 group-hover:underline">
+                    {blog.relatedProject.title}
+                  </p>
+                  {blog.relatedProject.description && (
+                    <p className="text-sm text-gray-600">
+                      {blog.relatedProject.description}
+                    </p>
+                  )}
+                </div>
+
+                <span className="ml-auto text-gray-400 group-hover:text-gray-600 transition">
+                  →
+                </span>
+              </Link>
+            </div>
+          )}
 
           {/* Social media share bar */}
           <ShareBar title={blog.title} />
