@@ -14,9 +14,9 @@ const Footer = () => {
 
   return (
     // Footer container
-    <footer className="mt-20 pt-8 pb-20 text-center text-gray-600">
+    <footer className="pb-20 text-center text-gray-600">
       {/* Top Section: Contact, Navigation, and Social Links */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-8 flex flex-col md:flex-row justify-between items-start md:items-center pb-8 border-b border-gray-200">
+      <div className="max-w-5xl mx-auto px-4 md:px-0 flex flex-col md:flex-row justify-between items-start md:items-center py-8 border-b border-gray-200">
         {/* Contact Information */}
         <div className="mb-8 md:mb-0 text-start">
           <p className="text-lg text-gray-700 font-light mb-1">
@@ -31,7 +31,7 @@ const Footer = () => {
         </div>
 
         {/* Navigation Links */}
-        <nav className="items-center space-x-6 mr-16 hidden sm:flex">
+        <nav className="items-center space-x-6 hidden sm:flex">
           <a
             href="#projects"
             className="hover:underline text-gray-700"
@@ -84,7 +84,7 @@ const Footer = () => {
       </div>
 
       {/* Bottom Section: Copyright */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-8 py-3 text-center text-sm text-gray-500">
+      <div className="max-w-7xl mx-auto py-3 text-center text-sm text-gray-500">
         <p>© {new Date().getFullYear()} Vinod Mali</p>
       </div>
     </footer>

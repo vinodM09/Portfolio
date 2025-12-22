@@ -64,10 +64,10 @@ export default function ContactMe() {
   };
 
   return (
-    <div className="max-w-7xl bg-white text-gray-900 font-sans">
-      <main className="w-full mx-auto md:px-6 pb-16">
+    <div className="max-w-5xl bg-white text-gray-900 font-sans">
+      <main className="w-full mx-auto border-b border-gray-200">
         {/* Contact form section */}
-        <section className="relative py-20 px-4 md:px-0 text-left">
+        <section className="relative py-10 px-4 md:px-0 text-left">
           <h2 className="text-3xl mb-4">Get In Touch</h2>
           <p className="text-gray-600 mb-10">
             Have a question, collaboration idea, or project proposal? Fill out
@@ -115,21 +115,6 @@ export default function ContactMe() {
               {isSending ? "Sending..." : "Send Message"}
             </button>
           </form>
-        </section>
-
-        {/* Direct email section */}
-        <section className="max-w-7xl mx-auto border-b border-gray-200 text-white px-4 md:px-0 py-10">
-          <div className="pb-6 px-4 bg-black rounded-3xl mx-auto py-10">
-            <h2 className="text-3xl font-normal text-start mb-4">
-              Prefer direct email?
-            </h2>
-            <a
-              href="mailto:snvinod09@gmail.com"
-              className="inline-flex items-center gap-2 text-sm border border-white !text-white px-3 py-1 rounded-full"
-            >
-              <FaEnvelope /> snvinod09@gmail.com
-            </a>
-          </div>
         </section>
       </main>
 

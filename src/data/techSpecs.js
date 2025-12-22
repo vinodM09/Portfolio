@@ -17,7 +17,7 @@ export const skills = {
       "Python",
       "Postman",
       "Hoppscotch",
-      "Deployment",
       "Git",
+      "AWS"
     ]
   };

@@ -18,6 +18,15 @@ const BlogDetail = () => {
   // Finding the blog post by ID from the imported blogs data
   const blog = blogs.find((b) => b.id === id);
 
+  const renderWithHighlights = (text) => {
+    if (!text) return "";
+  
+    return text.replace(
+      /\[\[(.*?)\]\]/g,
+      "<span class='bg-gray-100 text-gray-900 px-1.5 py-0.5 rounded-md text-sm font-medium'>$1</span>"
+    );
+  };
+
   // If blog is not found, display a message
   if (!blog) {
     return (
@@ -123,7 +132,7 @@ const BlogDetail = () => {
                   return (
                     <h2
                       key={index}
-                      className="text-3xl font-normal text-start mt-12 mb-6 text-gray-900"
+                      className="text-2xl text-start mt-12 mb-6 text-gray-900"
                     >
                       {block.text}
                     </h2>
@@ -149,10 +158,13 @@ const BlogDetail = () => {
                           )}
                         </figure>
                       )}
-
-                      <p className="text-gray-700 text-lg leading-relaxed">
-                        {block.text}
-                      </p>
+            
+                      <p
+                        className="text-gray-700 text-lg leading-relaxed"
+                        dangerouslySetInnerHTML={{
+                          __html: renderWithHighlights(block.text),
+                        }}
+                      />
                     </div>
                   );
                 }

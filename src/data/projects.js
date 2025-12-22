@@ -12,7 +12,7 @@ export const projects = [
       client: "Interstellar Spacetech Astronamy Community",
       year: "2025",
       scope: "Team Lead, Full Stack Development",
-      overview: "The ISA website showcases Interstellar Spacetech Astronomy’s projects and research through a modern, responsive platform with 40+ features, 15+ API endpoints, secure authentication, robust payments, and a complete registration and ticketing system with real-time updates.",
+      overview: "The ISA website showcases Interstellar Spacetech Astronomy’s projects and research through a modern, responsive platform with 15+ modular route groups (70+ endpoints), secure authentication, robust payments, and a complete registration and ticketing system with real-time updates.",
       description: "The ISA website was developed to present Interstellar Spacetech Astronomy’s projects and research in a modern, interactive, and user-friendly platform.\n\nBuilt with over 40+ features and 15+ API endpoints (each with multiple sub-endpoints), it offers seamless navigation, dynamic content updates, and responsive design across all devices.\n\nThe platform includes a fully integrated payment system with database reconciliation, a complete registration and ticketing workflow (from payment to on-site verification) and advanced authentication, authorization, and route protection for security.\n\nDesigned to engage and inform, the ISA website connects the scientific community through innovation, transparency, and accessibility.",
       techStack: [
         "React.js",

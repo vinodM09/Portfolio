@@ -23,9 +23,9 @@ const Blogs = () => {
       <Header />
 
       {/* Main content area for blog listings */}
-      <main className="max-w-5xl mx-auto px-4 sm:px-0 pb-16">
+      <main className="max-w-5xl mx-auto px-6 pb-16">
         {/* Page Header section */}
-        <section className="max-w-5xl mx-auto px-4 sm:px-0 pt-20 pb-10 border-b border-gray-200">
+        <section className="max-w-5xl mx-auto pt-20">
           <div className="flex flex-col md:flex-row items-center justify-between">
             <h1 className="text-3xl font-semibold mb-4 md:mb-0">
               Technical Blogs
@@ -37,14 +37,14 @@ const Blogs = () => {
               ← Back to Home
             </Link>
           </div>
-          <p className="mt-4 text-gray-600 max-w-3xl">
+          <p className="mt-4 text-gray-600 max-w-3xl text-center md:text-start">
             Deep dives, engineering decisions, mistakes, and lessons learned
             while building real projects.
           </p>
         </section>
 
         {/* Section displaying the list of blog posts */}
-        <section className="mt-12 border-b border-gray-200">
+        <section className="mt-10 border-b border-gray-200 pb-20">
           {blogs.map((blog, index) => (
             // Link to the individual blog post detail page
             <Link
@@ -54,9 +54,8 @@ const Blogs = () => {
             >
               {/* Individual blog post article */}
               <article
-                className={`flex items-center gap-6 py-8 ${
-                  index !== 0 ? "border-t border-gray-200" : ""
-                }`}
+                className={`flex items-center gap-6 py-8 ${index !== 0 ? "border-t border-gray-200" : ""
+                  }`}
               >
                 {/* Left content area of the blog card (text details) */}
                 <div className="flex-1">
@@ -79,7 +78,7 @@ const Blogs = () => {
                   {/* TLDR or Excerpt of the blog post */}
                   <p className="text-gray-700 mb-4 line-clamp-2">
                     <span className="font-medium">TL;DR:</span>{" "}
-                    {blog.excerpt}
+                    {blog.tldr}
                   </p>
 
                   {/* Blog Post Date */}
@@ -93,13 +92,14 @@ const Blogs = () => {
                   <img
                     src={blog.coverImage}
                     alt={blog.title}
-                    className="w-full h-full object-cover rounded-md"
+                    className="w-full h-full object-cover rounded-md bg-black"
                   />
                 </div>
               </article>
             </Link>
           ))}
         </section>
+
       </main>
 
       {/* Footer component */}

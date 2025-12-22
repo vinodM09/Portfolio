@@ -17,7 +17,7 @@ const FeaturedBlogs = () => {
   const featuredBlogs = blogs.slice(0, 3);
 
   return (
-    <section id="blogs" className="mt-16 max-w-7xl mx-auto px-4 sm:px-0">
+    <section id="blogs" className="mt-16 max-w-7xl mx-auto px-4 md:px-0">
       {/* Section Header */}
       <div className="flex items-center justify-between">
         <h2 className="text-3xl font-normal">Technical Blogs</h2>
@@ -56,14 +56,14 @@ const FeaturedBlogs = () => {
                 </div>
 
                 {/* Title */}
-                <h3 className="text-2xl font-semibold leading-snug mb-2">
+                <h3 className="text-2xl font-semibold leading-snug mb-2 hover:underline">
                   {blog.title || "Blog title"}
                 </h3>
 
                 {/* TLDR / Excerpt */}
                 <p className="text-gray-700 mb-4 line-clamp-2">
                   <span className="font-medium">TL;DR:</span>{" "}
-                  {blog.excerpt || "Short summary of what this blog is about."}
+                  {blog.tldr || "Short summary of what this blog is about."}
                 </p>
 
                 {/* Meta */}
@@ -75,7 +75,7 @@ const FeaturedBlogs = () => {
               </div>
 
               {/* Right Image */}
-              <div className="w-1/4 sm:w-[160px] md:w-[180px] h-[100px] sm:h-[120px] flex-shrink-0 flex ">
+              <div className="w-1/4 sm:w-[160px] md:w-[180px] h-[100px] sm:h-[120px] flex-shrink-0 flex bg-black rounded-xl">
                 <img
                   src={blog.coverImage || ""}
                   alt={blog.title || "Blog cover"}

@@ -20,7 +20,7 @@ const TechSpecs = ({ skills }) => {
       : "Tools & Technologies";
 
   return (
-    <section className="max-w-7xl mx-auto px-4 md:px-0 py-16">
+    <section className="max-w-7xl mx-auto px-4 md:px-0 py-16 pb-0">
       <div className="border-b border-gray-200 pb-10 md:px-0">
         {/* Section Header */}
         <div className="flex items-center justify-between">
