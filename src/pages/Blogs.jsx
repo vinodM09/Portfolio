@@ -23,28 +23,9 @@ const Blogs = () => {
       <Header />
 
       {/* Main content area for blog listings */}
-      <main className="max-w-5xl mx-auto px-6 pb-16">
-        {/* Page Header section */}
-        <section className="max-w-5xl mx-auto pt-20">
-          <div className="flex flex-col md:flex-row items-center justify-between">
-            <h1 className="text-3xl font-semibold mb-4 md:mb-0">
-              Technical Blogs
-            </h1>
-            <Link
-              to="/"
-              className="text-sm text-gray-700 hover:text-black hover:underline transition"
-            >
-              ← Back to Home
-            </Link>
-          </div>
-          <p className="mt-4 text-gray-600 max-w-3xl text-center md:text-start">
-            Deep dives, engineering decisions, mistakes, and lessons learned
-            while building real projects.
-          </p>
-        </section>
-
+      <main className="max-w-5xl mx-auto px-6 pb-16 border-b border-gray-200">
         {/* Section displaying the list of blog posts */}
-        <section className="mt-10 border-b border-gray-200 pb-20">
+        <section className="pb-10">
           {blogs.map((blog, index) => (
             // Link to the individual blog post detail page
             <Link

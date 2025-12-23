@@ -42,7 +42,7 @@ export const projects = [
 
       // for featured work card
       category: "Team Lead, Full Stack Development",
-      imageUrl: "/images/isa/isahomepage.png",
+      imageUrl: "/images/isa/isahomepage_2.png",
       altText: "isa_banner",
       tag: "Team Project (Upcoming)",
     },
@@ -79,7 +79,7 @@ export const projects = [
       ],
       // for featured work card
       category: "Renewable Energy, Real Time Monitoring",
-      imageUrl: "/images/monitoring/mshome2.png",
+      imageUrl: "/images/monitoring/mshome_.png",
       altText: "microgrids_banner",
       tag: "Team Project",
     },
@@ -135,7 +135,7 @@ export const projects = [
       ],
       // for featued work card
       category: "Deployment, Full Stack Development",
-      imageUrl: "/images/travelcrm/tcrmhome.png",
+      imageUrl: "/images/travelcrm/tcrmlogin.png",
       altText: "travelcrm_banner",
       tag: "Personal Project",
     },
@@ -166,21 +166,22 @@ export const projects = [
         "Material UI",
         "JavaScript",
         "API Routes",
-        "Node.js"
+        "Node.js",
+        "JWT",
       ],
     
       liveLink: `${VITE_SHOPPING_LIVE_LINK}`,
       githubRepoLink: `${VITE_SHOPPING_GITHUB_LINK}`,
     
       gallery: [
-        "/images/shopping/home.png",
-        "/images/shopping/rec.png",
-        "/images/shopping/admin.png",
+        "/images/shopping/shop_home.png",
+        "/images/shopping/shop_product_detail.png",
+        "/images/shopping/shop_admin.png",
       ],
     
       // for featured work card
       category: "Full Stack Development, E-commerce",
-      imageUrl: "/images/shopping/home.png",
+      imageUrl: "/images/shopping/shop_product_detail.png",
       altText: "shopping_app_banner",
       tag: "Personal Project",
     }

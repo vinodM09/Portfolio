@@ -102,7 +102,7 @@ export default function Header() {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="absolute w-full top-full right-1 mt-2 items-center bg-white shadow-lg rounded-lg p-4 flex flex-col space-y-3 md:hidden z-50">
+        <div className="absolute w-full top-full right-1 items-center bg-white shadow-lg rounded-lg p-4 flex flex-col space-y-3 md:hidden z-50">
           <Link
             to="/projects"
             className="hover:underline text-gray-700"

@@ -25,7 +25,7 @@ export default function Dashboard() {
       {/* Header */}
       <Header />
 
-      <main className="max-w-5xl mx-auto md:px-6 pb-16">
+      <main className="max-w-5xl mx-auto md:px-6">
         {/* Hero */}
         <HeroSection />
 

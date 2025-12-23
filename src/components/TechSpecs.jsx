@@ -14,14 +14,14 @@ const TechSpecs = ({ skills }) => {
   // Determine the section title based on the current path
   const title =
     pathname === "/" ||
-    pathname === "/dashboard" ||
-    pathname === "/dashboard#"
+      pathname === "/dashboard" ||
+      pathname === "/dashboard#"
       ? "Skills & Tools"
       : "Tools & Technologies";
 
   return (
-    <section className="max-w-7xl mx-auto px-4 md:px-0 py-16 pb-0">
-      <div className="border-b border-gray-200 pb-10 md:px-0">
+    <section className="max-w-7xl mx-auto px-4 md:px-0 pt-10">
+      <div className="border-t border-b border-gray-200 py-10">
         {/* Section Header */}
         <div className="flex items-center justify-between">
           <h2 className="text-3xl font-normal text-start">{title}</h2>

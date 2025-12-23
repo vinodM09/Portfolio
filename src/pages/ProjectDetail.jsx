@@ -5,6 +5,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import TechSpecs from "../components/TechSpecs";
 import ContactMe from "../components/ContactMe";
+import RelatedBlogs from "../components/RelatedBlogs";
 
 const ProjectDetail = () => {
   const { id } = useParams();
@@ -47,10 +48,10 @@ const ProjectDetail = () => {
               <div className="flex space-x-2">
                 {project.liveLink && project.liveLink !== "" && (
                   <a
-                  href={project.liveLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm border px-3 py-1 rounded-full opacity-60"
+                    href={project.liveLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm border px-3 py-1 rounded-full opacity-60"
                   >
                     View Live Project
                   </a>
@@ -70,8 +71,8 @@ const ProjectDetail = () => {
           </div>
         </section>
 
-        <section className="max-w-7xl mx-auto px-4 md:px-0 py-16">
-          <div className="border-b border-gray-200 pb-6 md:px-0">
+        <section className="max-w-7xl mx-auto px-4 md:px-0">
+          <div className="md:px-0">
             <h2 className="text-3xl font-normal text-start">Gallery</h2>
             {project.gallery && project.gallery.length > 0 ? (
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 md:gap-4 mt-6">
@@ -117,7 +118,7 @@ const ProjectDetail = () => {
         <TechSpecs skills={project.techStack || []} />
 
         {/* Solution Section */}
-        <section className="max-w-7xl mx-auto px-4 md:px-0 py-16">
+        <section className="max-w-7xl mx-auto px-4 md:px-0 pt-10">
           <div className="border-b border-gray-200 pb-6 md:px-0">
             <h2 className="text-3xl font-normal text-start mb-4">The Solution</h2>
             <div className="text-gray-700 mb-4">
@@ -135,6 +136,9 @@ const ProjectDetail = () => {
             </div>
           </div>
         </section>
+
+        {/* Related Blogs Section */}
+        <RelatedBlogs projectId={project.id} />
 
         {/* Footer */}
         <ContactMe />

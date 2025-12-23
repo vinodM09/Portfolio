@@ -20,7 +20,7 @@ const BlogDetail = () => {
 
   const renderWithHighlights = (text) => {
     if (!text) return "";
-  
+
     return text.replace(
       /\[\[(.*?)\]\]/g,
       "<span class='bg-gray-100 text-gray-900 px-1.5 py-0.5 rounded-md text-sm font-medium'>$1</span>"
@@ -44,7 +44,7 @@ const BlogDetail = () => {
 
       {/* Main content area for the blog */}
       <main className="max-w-5xl mx-auto md:px-6 pb-16">
-        <article className="mt-16 px-4 md:px-0">
+        <article className="mt-16 px-4 md:px-0 border-b border-gray-200">
           {/* Publication and Author information */}
           <div className="text-sm text-gray-600 mb-4">
             <span className="font-medium">{blog.publication}</span>
@@ -158,7 +158,7 @@ const BlogDetail = () => {
                           )}
                         </figure>
                       )}
-            
+
                       <p
                         className="text-gray-700 text-lg leading-relaxed"
                         dangerouslySetInnerHTML={{
