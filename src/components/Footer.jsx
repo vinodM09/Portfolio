@@ -99,7 +99,12 @@ const Footer = () => {
 
       {/* Bottom Section: Copyright */}
       <div className="max-w-7xl mx-auto py-3 text-center text-sm text-gray-500">
-        <p>© {new Date().getFullYear()} Vinod Mali</p>
+        <p>
+          © {(() => {
+            const currentYear = new Date().getFullYear();
+            return currentYear === 2025 ? "2025" : `2025-${currentYear}`;
+          })()} Vinod Mali
+        </p>
       </div>
     </footer>
   );
