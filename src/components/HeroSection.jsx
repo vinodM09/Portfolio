@@ -25,7 +25,7 @@ export default function HeroSection() {
               Hey there!{" "}
             </h3>
             <h1 className="text-4xl md:text-5xl font-semibold leading-tight text-start">
-              I'm Vinod Mali
+              <span className="text-2xl md:text-3xl">I'm</span> Vinod Mali
             </h1>
           </span>
           <h3 className="text-2xl md:text-3xl font-semibold leading-tight text-start">

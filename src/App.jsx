@@ -20,21 +20,22 @@ import ScrollToTop from "./components/ScrollToTop";
 // Google Analytics Tracking ID from environment variables
 const TRACKING_ID = import.meta.env.VITE_GA_TRACKING_ID;
 
-// Initialize Google Analytics if TRACKING_ID is available
-if (TRACKING_ID) {
+// Initialize Google Analytics only in production mode
+if (TRACKING_ID && import.meta.env.PROD) {
   ReactGA.initialize(TRACKING_ID);
 }
 
 /**
  * RouteChangeTracker Component
  * Tracks page views and sends them to Google Analytics on route changes.
+ * Only active in production builds.
  */
 function RouteChangeTracker() {
   const location = useLocation();
 
   useEffect(() => {
-    // Send a pageview event to Google Analytics
-    if (TRACKING_ID) {
+    // Send a pageview event to Google Analytics only in production
+    if (TRACKING_ID && import.meta.env.PROD) {
       ReactGA.send({
         hitType: "pageview",
         page: location.pathname + location.search,

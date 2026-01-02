@@ -40,47 +40,44 @@ const FeaturedWork = () => {
             className="group block relative"
           >
             {/* Individual project card */}
-            <article className="rounded-xl overflow-hidden transition-all duration-300 border relative bg-gray-100">
+            <article className="rounded-xl overflow-hidden transition-all duration-300 relative bg-white shadow-sm hover:shadow-md flex flex-col h-full">
               {/* Project Image */}
-              <div className="rounded-t-xl overflow-hidden relative">
+              <div className="rounded-xl overflow-hidden relative">
                 <img
                   src={project.imageUrl || ""}
                   alt={project.altText || "Image not available"}
-                  className="w-full h-48 object-cover rounded-t-lg"
+                  className="w-full h-48 object-cover"
                 />
 
-                {/* Overlay effect on hover */}
-                <div className="absolute bottom-0 left-0 w-full h-0 group-hover:h-full bg-gradient-to-t from-black/60 via-black/30 to-transparent flex items-end justify-center rounded-t-lg transition-all duration-500">
-                  <span className="text-white font-semibold mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                    View Project Details
+                {/* Project Tag on Banner */}
+                <div className="absolute top-4 left-4">
+                  <span
+                    className={`text-xs backdrop-blur-sm px-3 py-1 rounded ${project.imageBrightness === 'light'
+                        ? 'bg-black/80 text-white'
+                        : 'bg-white/90 text-black'
+                      }`}
+                  >
+                    {project.tag || "Tag"}
                   </span>
                 </div>
               </div>
 
               {/* Project Content */}
-              <div className="p-4 pt-4 text-start bg-gray-100">
-                {/* Project Tag */}
-                <button
-                  className="text-xs border px-3 py-1 rounded-full mb-2"
-                  style={{ opacity: "0.6" }}
-                >
-                  {project.tag || "Tag"}
-                </button>
-
+              <div className="p-6 text-start bg-gray-100 flex flex-col flex-1">
                 {/* Project Title */}
-                <div className="flex">
-                  <h3 className="max-w-11/12 text-xl font-semibold mb-1 group-hover:underline line-clamp-2 min-h-[3.5rem]">
-                    {project.title || "Project Title"}
-                  </h3>
-                  <span className="ml-auto text-gray-400 group-hover:text-gray-600 transition">
-                    &#8599;
-                  </span>
-                </div>
+                <h3 className="text-lg font-semibold mb-2 group-hover:underline line-clamp-2">
+                  {project.title || "Project Title"}
+                </h3>
 
-                {/* Project Category */}
-                <p className="text-sm text-gray-500 font-normal">
+                {/* Project Description/Category */}
+                <p className="text-sm text-gray-600 font-normal mb-3 line-clamp-3">
                   {project.category || "Category"}
                 </p>
+
+                {/* Arrow Icon */}
+                <div className="flex items-center text-gray-900 mt-auto">
+                  <span className="text-lg group-hover:translate-x-1 transition-transform duration-300">→</span>
+                </div>
               </div>
             </article>
           </Link>
