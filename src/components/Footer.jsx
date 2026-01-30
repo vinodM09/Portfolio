@@ -20,12 +20,12 @@ const Footer = () => {
       <div className="max-w-5xl mx-auto flex px-4 md:px-0 flex-col md:flex-row justify-between items-start md:items-center py-8 border-t border-gray-200 dark:border-neutral-800 border-b border-gray-200 dark:border-neutral-800">
         {/* Contact Information */}
         <div className="mb-8 md:mb-0 text-start">
-          <p className="text-lg text-gray-700 dark:text-gray-300 font-light mb-1">
+          <p className="text-base md:text-lg text-gray-700 dark:text-gray-300 font-light mb-1">
             Get in touch with me at
           </p>
           <a
             href="mailto:snvinod09@gmail.com"
-            className="text-2xl text-black dark:text-white hover:text-gray-700 dark:hover:text-gray-300 transition"
+            className="text-xl md:text-2xl text-black dark:text-white hover:text-gray-700 dark:hover:text-gray-300 transition"
           >
             snvinod09@gmail.com
           </a>
@@ -100,7 +100,7 @@ const Footer = () => {
       </div>
 
       {/* Bottom Section: Copyright */}
-      <div className="max-w-7xl mx-auto py-3 text-center text-sm text-gray-500 dark:text-gray-400">
+      <div className="max-w-7xl mx-auto py-3 text-center text-xs md:text-sm text-gray-500 dark:text-gray-400">
         <p>
           © {(() => {
             const currentYear = new Date().getFullYear();

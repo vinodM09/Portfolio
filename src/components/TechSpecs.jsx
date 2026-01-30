@@ -24,7 +24,7 @@ const TechSpecs = ({ skills }) => {
       <div className="border-t dark:border-neutral-800 py-10">
         {/* Section Header */}
         <div className="flex items-center justify-between">
-          <h2 className="text-3xl font-normal text-start">{title}</h2>
+          <h2 className="text-xl md:text-3xl font-normal text-start">{title}</h2>
         </div>
 
         {/* Skills List */}
@@ -33,7 +33,7 @@ const TechSpecs = ({ skills }) => {
           {skills.map((skill, index) => (
             <button
               key={index}
-              className="text-sm border dark:border-neutral-700 px-3 py-1 rounded-full dark:text-gray-900 dark:bg-white dark:hover:bg-gray-200 cursor-text transition-colors duration-200"
+              className="text-xs md:text-sm border dark:border-neutral-700 px-3 py-1 rounded-full dark:text-gray-900 dark:bg-white dark:hover:bg-gray-200 cursor-text transition-colors duration-200"
               style={{ opacity: "0.8" }}
             >
               {skill}

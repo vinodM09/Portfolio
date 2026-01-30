@@ -21,7 +21,7 @@ const FeaturedWork = () => {
     <section id="projects" className="mt-16 max-w-7xl mx-auto px-4 sm:px-0">
       {/* Section Header */}
       <div className="flex items-center justify-between">
-        <h2 className="text-3xl font-normal">My featured work</h2>
+        <h2 className="text-xl md:text-3xl font-normal">My featured work</h2>
         <Link
           to="/projects"
           className="text-sm text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white hover:underline transition"

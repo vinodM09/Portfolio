@@ -22,10 +22,10 @@ const FeaturedBlogs = () => {
     <section id="blogs" className="mt-10 max-w-7xl mx-auto px-4 md:px-0">
       {/* Section Header */}
       <div className="flex items-center justify-between">
-        <h2 className="text-3xl font-normal">Technical Blogs</h2>
+        <h2 className="text-xl md:text-3xl font-normal pb-4 md:pb-0">Technical Blogs</h2>
         <Link
           to="/blogs"
-          className="text-sm text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white hover:underline transition"
+          className="text-sm text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white hover:underline transition pb-4 md:pb-0"
         >
           View all
         </Link>
@@ -39,14 +39,14 @@ const FeaturedBlogs = () => {
               to={blog.id ? `/blog/${blog.id}` : "#"}
               className="block"
             >
-              <article className="flex items-center gap-6 py-8">
+              <article className="flex items-center gap-6 py-4 md:py-8">
                 {/* Left Content */}
                 <div className="flex-1">
                   {/* Publication / Author */}
 
 
                   {/* Title */}
-                  <h3 className="text-2xl font-semibold leading-snug mb-2 hover:underline dark:text-white">
+                  <h3 className="text-lg md:text-2xl leading-snug mb-2 hover:underline dark:text-white">
                     {blog.title || "Blog title"}
                   </h3>
 
@@ -63,7 +63,7 @@ const FeaturedBlogs = () => {
                 </div>
 
                 {/* Right Image */}
-                <div className="w-1/4 sm:w-[160px] md:w-[180px] h-[100px] sm:h-[120px] flex-shrink-0 flex bg-black rounded-xl">
+                <div className="hidden sm:flex sm:w-[160px] md:w-[180px] h-[100px] sm:h-[120px] flex-shrink-0 bg-black rounded-xl">
                   <img
                     src={blog.coverImage || ""}
                     alt={blog.title || "Blog cover"}
@@ -74,7 +74,7 @@ const FeaturedBlogs = () => {
             </Link>
             {/* Add HR between blogs, but not after the last one */}
             {index < featuredBlogs.length - 1 && (
-              <hr className="border-gray-200 dark:border-neutral-800" />
+              <hr className="hidden sm:block border-gray-200 dark:border-neutral-800" />
             )}
           </React.Fragment>
         ))}
