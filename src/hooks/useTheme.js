@@ -13,8 +13,8 @@ export default function useTheme() {
                 return storedTheme;
             }
         }
-        // Default to light
-        return "light";
+        // Default to dark
+        return "dark";
     });
 
     useEffect(() => {
