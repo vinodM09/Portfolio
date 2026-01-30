@@ -3,7 +3,7 @@ export const blogs = [
     id: "payments-stop-being-just-a-feature",
     publication: "Personal Blog",
     author: "Vinod Mali",
-    title: "Building a Production-Grade Payment System",
+    title: "Building a Payment System",
     tldr:
       "Payment feature implementation using React, Node.js, Express.js, MongoDB, and PhonePe..",
     date: "Oct 14, 2025",
@@ -153,7 +153,7 @@ export const blogs = [
     id: "when-registration-becomes-ticketing",
     publication: "Personal Blog",
     author: "Vinod Mali",
-    title: "When Event Registration Becomes a Ticketing System",
+    title: "Implementing Event Registration (Ticketing System)",
     tldr:
       "Full-stack event registration flow with free and paid events, QR-based tickets, and backend-driven validation.",
     date: "Oct 18, 2025",

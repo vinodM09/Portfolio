@@ -64,12 +64,12 @@ export default function ContactMe() {
   };
 
   return (
-    <div className="max-w-5xl bg-white text-gray-900 font-sans">
-      <main className="w-full mx-auto border-b border-gray-200">
+    <div className="max-w-5xl font-sans">
+      <main className="w-full mx-auto">
         {/* Contact form section */}
         <section className="relative py-10 px-4 md:px-0 text-left">
-          <h2 className="text-3xl mb-4">Get In Touch</h2>
-          <p className="text-gray-600 mb-10">
+          <h2 className="text-3xl mb-4 dark:text-white">Get In Touch</h2>
+          <p className="text-gray-600 dark:text-gray-300 mb-10">
             Have a question, collaboration idea, or project proposal? Fill out
             the form below, and I’ll get back to you soon.
           </p>
@@ -87,14 +87,14 @@ export default function ContactMe() {
                 name="from_name"
                 placeholder="Your Name"
                 required
-                className="border p-3 rounded-lg bg-transparent focus:outline-none focus:ring-2 focus:ring-black flex-1"
+                className="border dark:border-neutral-700 p-3 rounded-lg bg-transparent dark:bg-neutral-900 dark:text-white dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white flex-1"
               />
               <input
                 type="email"
                 name="from_email"
                 placeholder="Your Email"
                 required
-                className="border p-3 rounded-lg bg-transparent focus:outline-none focus:ring-2 focus:ring-black flex-1"
+                className="border dark:border-neutral-700 p-3 rounded-lg bg-transparent dark:bg-neutral-900 dark:text-white dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white flex-1"
               />
             </div>
 
@@ -103,14 +103,14 @@ export default function ContactMe() {
               name="message"
               placeholder="Your Message"
               required
-              className="border p-3 rounded-lg bg-transparent h-32 focus:outline-none focus:ring-2 focus:ring-black"
+              className="border dark:border-neutral-700 p-3 rounded-lg bg-transparent dark:bg-neutral-900 dark:text-white dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white"
             />
 
             {/* Submit button */}
             <button
               type="submit"
               disabled={isSending}
-              className="border border-black px-6 py-2 rounded-full text-sm hover:bg-black hover:text-white transition-all duration-300"
+              className="border border-black dark:border-neutral-700 px-6 py-2 rounded-full text-sm hover:bg-black hover:text-white dark:bg-neutral-900 dark:text-white dark:hover:bg-neutral-800 transition-all duration-300"
             >
               {isSending ? "Sending..." : "Send Message"}
             </button>

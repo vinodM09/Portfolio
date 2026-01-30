@@ -1,5 +1,6 @@
 // React and icon imports
 import React from "react";
+import { Link } from "react-router-dom";
 import { FaLinkedinIn, FaGithub } from "react-icons/fa";
 
 /**
@@ -14,17 +15,17 @@ const Footer = () => {
 
   return (
     // Footer container
-    <footer className="pb-20 text-center text-gray-600">
+    <footer className="pb-20 max-w-5xl mx-auto px-6 text-center text-gray-600 dark:text-gray-400">
       {/* Top Section: Contact, Navigation, and Social Links */}
-      <div className="max-w-5xl mx-auto px-4 md:px-0 flex flex-col md:flex-row justify-between items-start md:items-center py-8 border-b border-gray-200">
+      <div className="max-w-5xl mx-auto px-4 md:px-0 flex flex-col md:flex-row justify-between items-start md:items-center py-8 border-t border-gray-200 dark:border-neutral-800 border-b border-gray-200 dark:border-neutral-800">
         {/* Contact Information */}
         <div className="mb-8 md:mb-0 text-start">
-          <p className="text-lg text-gray-700 font-light mb-1">
+          <p className="text-lg text-gray-700 dark:text-gray-300 font-light mb-1">
             Get in touch with me at
           </p>
           <a
             href="mailto:snvinod09@gmail.com"
-            className="text-2xl text-black hover:text-gray-700 transition"
+            className="text-2xl text-black dark:text-white hover:text-gray-700 dark:hover:text-gray-300 transition"
           >
             snvinod09@gmail.com
           </a>
@@ -34,25 +35,26 @@ const Footer = () => {
         <nav className="items-center space-x-6 hidden sm:flex">
           <a
             href="#projects"
-            className="hover:underline text-gray-700"
+            className="hover:underline text-gray-700 dark:text-gray-300"
             style={{ opacity: "0.6" }}
           >
             Projects
           </a>
           <a
             href="#blogs"
-            className="hover:underline text-gray-700"
+            className="hover:underline text-gray-700 dark:text-gray-300"
             style={{ opacity: "0.6" }}
           >
             Blogs
           </a>
-          <a
-            href="#hero"
-            className="hover:underline text-gray-700"
+          <Link
+            to="/contact"
+            className="hover:underline text-gray-700 dark:text-gray-300"
             style={{ opacity: "0.6" }}
           >
-            About me
-          </a>
+            Contact
+          </Link>
+
         </nav>
 
         {/* Social Media Icons */}
@@ -63,9 +65,9 @@ const Footer = () => {
             aria-label="LinkedIn"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-3 border border-gray-300 rounded-lg hover:border-black transition duration-150"
+            className="p-3 border border-gray-300 dark:border-neutral-700 rounded-lg hover:border-black dark:hover:border-white transition duration-150"
           >
-            <FaLinkedinIn className="w-5 h-5 text-gray-700" />
+            <FaLinkedinIn className="w-5 h-5 text-gray-700 dark:text-gray-300" />
           </a>
           {/* GitHub */}
           <a
@@ -73,9 +75,9 @@ const Footer = () => {
             aria-label="GitHub"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-3 border border-gray-300 rounded-lg hover:border-black transition duration-150"
+            className="p-3 border border-gray-300 dark:border-neutral-700 rounded-lg hover:border-black dark:hover:border-white transition duration-150"
           >
-            <FaGithub className="w-5 h-5 text-gray-700" />
+            <FaGithub className="w-5 h-5 text-gray-700 dark:text-gray-300" />
           </a>
           {/* LeetCode */}
           <a
@@ -83,10 +85,10 @@ const Footer = () => {
             aria-label="LeetCode"
             target="_blank"
             rel="noopener noreferrer"
-            className="p-3 border border-gray-300 rounded-lg hover:border-black transition duration-150"
+            className="p-3 border border-gray-300 dark:border-neutral-700 rounded-lg hover:border-black dark:hover:border-white transition duration-150"
           >
             <svg
-              className="w-5 h-5 text-gray-700"
+              className="w-5 h-5 text-gray-700 dark:text-gray-300"
               fill="currentColor"
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
@@ -98,7 +100,7 @@ const Footer = () => {
       </div>
 
       {/* Bottom Section: Copyright */}
-      <div className="max-w-7xl mx-auto py-3 text-center text-sm text-gray-500">
+      <div className="max-w-7xl mx-auto py-3 text-center text-sm text-gray-500 dark:text-gray-400">
         <p>
           © {(() => {
             const currentYear = new Date().getFullYear();

@@ -15,6 +15,8 @@ import Projects from "./pages/Projects";
 import ProjectDetail from "./pages/ProjectDetail";
 import BlogDetail from "./pages/BlogDetail";
 import Blogs from "./pages/Blogs";
+import Contact from "./pages/Contact";
+import Layout from "./components/Layout";
 import ScrollToTop from "./components/ScrollToTop";
 
 // Google Analytics Tracking ID from environment variables
@@ -60,18 +62,22 @@ export default function App() {
 
       {/* Main routing setup */}
       <Routes>
-        {/* Redirect root path to the dashboard */}
-        <Route path="/" element={<Navigate to="/dashboard" replace />} />
-        {/* Route for the main dashboard page */}
-        <Route path="/dashboard" element={<Dashboard />} />
-        {/* Route for the projects page */}
-        <Route path="/projects" element={<Projects />} />
-        {/* Route for the blogs page */}
-        <Route path="/blogs" element={<Blogs />} />
-        {/* Route for detailed project view with a dynamic ID */}
-        <Route path="/project/:id" element={<ProjectDetail />} />
-        {/* Route for detailed blog view with a dynamic ID */}
-        <Route path="/blog/:id" element={<BlogDetail />} />
+        <Route element={<Layout />}>
+          {/* Redirect root path to the dashboard */}
+          <Route path="/" element={<Navigate to="/dashboard" replace />} />
+          {/* Route for the main dashboard page */}
+          <Route path="/dashboard" element={<Dashboard />} />
+          {/* Route for the projects page */}
+          <Route path="/projects" element={<Projects />} />
+          {/* Route for the blogs page */}
+          <Route path="/blogs" element={<Blogs />} />
+          {/* Route for the contact page */}
+          <Route path="/contact" element={<Contact />} />
+          {/* Route for detailed project view with a dynamic ID */}
+          <Route path="/project/:id" element={<ProjectDetail />} />
+          {/* Route for detailed blog view with a dynamic ID */}
+          <Route path="/blog/:id" element={<BlogDetail />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );

@@ -6,7 +6,10 @@
 /* Import Tailwind CSS utilities */
 @import "tailwindcss";
 
+/* Force dark mode to use class strategy */
+@variant dark (&:where(.dark, .dark *));
+
 /* Base body styles */
 body {
-  @apply bg-white text-black font-sans antialiased;
+  @apply bg-white text-black font-sans antialiased dark:bg-neutral-950 dark:text-white transition-colors duration-300;
 }

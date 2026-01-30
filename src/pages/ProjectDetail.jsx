@@ -1,8 +1,7 @@
 import React from "react";
 import { useParams, Navigate } from "react-router-dom";
 import { projects } from "../data/projects";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+
 import TechSpecs from "../components/TechSpecs";
 import ContactMe from "../components/ContactMe";
 import RelatedBlogs from "../components/RelatedBlogs";
@@ -17,9 +16,8 @@ const ProjectDetail = () => {
   if (!project) return <Navigate to="/" />;
 
   return (
-    <div className="min-h-screen bg-white text-gray-900 font-sans">
-      {/* Header */}
-      <Header />
+    <div className="min-h-screen font-sans dark:bg-black dark:text-white">
+
 
       {/* Main Content with Dashboard width */}
       <main className="max-w-5xl mx-auto md:px-6 pb-16">
@@ -33,17 +31,17 @@ const ProjectDetail = () => {
             </div>
 
             {/* Separator line */}
-            <div className="hidden md:block w-px bg-gray-400 opacity-30 h-32"></div>
+            <div className="hidden md:block w-px bg-gray-400 dark:bg-gray-600 opacity-30 h-32"></div>
 
             {/* Right: Details */}
             <div className="w-full md:w-1/2 flex flex-col md:items-end md:text-end md:pl-6 space-y-4">
               <p>
                 <span className="font-semibold">Client</span>
-                <span className="block mb-2 text-gray-600">{project.client || "Not specified"}</span>
+                <span className="block mb-2 text-gray-600 dark:text-gray-400">{project.client || "Not specified"}</span>
                 <span className="font-semibold">Year</span>
-                <span className="block mb-2 text-gray-600">{project.year || "Not specified"}</span>
+                <span className="block mb-2 text-gray-600 dark:text-gray-400">{project.year || "Not specified"}</span>
                 <span className="font-semibold">Scope</span>
-                <span className="block mb-2 text-gray-600">{project.scope || "Not specified"}</span>
+                <span className="block mb-2 text-gray-600 dark:text-gray-400">{project.scope || "Not specified"}</span>
               </p>
               <div className="flex space-x-2">
                 {project.liveLink && project.liveLink !== "" && (
@@ -51,7 +49,7 @@ const ProjectDetail = () => {
                     href={project.liveLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-sm border px-3 py-1 rounded-full opacity-60"
+                    className="text-sm border border-gray-300 dark:border-gray-700 px-3 py-1 rounded-full opacity-60 hover:opacity-100 transition"
                   >
                     View Live Project
                   </a>
@@ -61,7 +59,7 @@ const ProjectDetail = () => {
                     href={project.githubRepoLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-sm border px-3 py-1 rounded-full opacity-60"
+                    className="text-sm border border-gray-300 dark:border-gray-700 px-3 py-1 rounded-full opacity-60 hover:opacity-100 transition"
                   >
                     GitHub Code
                   </a>
@@ -87,7 +85,7 @@ const ProjectDetail = () => {
                 ))}
               </div>
             ) : (
-              <p className="text-gray-600 mt-4">No gallery available.</p>
+              <p className="text-gray-600 dark:text-gray-400 mt-4">No gallery available.</p>
             )}
             {project.gallery && project.gallery.length > 0 && (
               <p className="italic text-sm">
@@ -119,11 +117,11 @@ const ProjectDetail = () => {
 
         {/* Solution Section */}
         <section className="max-w-7xl mx-auto px-4 md:px-0 pt-10">
-          <div className="border-b border-gray-200 pb-6 md:px-0">
+          <div className="pb-6 md:px-0">
             <h2 className="text-3xl font-normal text-start mb-4">The Solution</h2>
-            <div className="text-gray-700 mb-4">
+            <div className="text-gray-700 dark:text-gray-300 mb-4">
               {(project.description || "").split("\n\n").map((para, index) => (
-                <p key={index} className="text-gray-700 mb-4">
+                <p key={index} className="text-gray-700 dark:text-gray-300 mb-4">
                   {para.split("\n").map((line, i) =>
                     line.startsWith("•") ? (
                       <span key={i} className="block ml-6">{line}</span>
@@ -138,13 +136,9 @@ const ProjectDetail = () => {
         </section>
 
         {/* Related Blogs Section */}
-        <RelatedBlogs projectId={project.id} />
+        {/* <RelatedBlogs projectId={project.id} /> */}
 
-        {/* Footer */}
-        <ContactMe />
 
-        {/* Footer */}
-        <Footer />
       </main>
     </div>
   );

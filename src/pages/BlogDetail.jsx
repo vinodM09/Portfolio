@@ -3,8 +3,7 @@ import { Link, useParams } from "react-router-dom";
 
 // Data and component imports
 import { blogs } from "../data/blogs";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+
 import ShareBar from "../components/ShareBar";
 
 /**
@@ -23,14 +22,14 @@ const BlogDetail = () => {
 
     return text.replace(
       /\[\[(.*?)\]\]/g,
-      "<span class='bg-gray-100 text-gray-900 px-1.5 py-0.5 rounded-md text-sm font-medium'>$1</span>"
+      "<span class='bg-gray-100 text-gray-900 dark:bg-gray-800 dark:text-gray-100 px-1.5 py-0.5 rounded-md text-sm font-medium'>$1</span>"
     );
   };
 
   // If blog is not found, display a message
   if (!blog) {
     return (
-      <div className="max-w-5xl mx-auto px-6 mt-20 text-center text-gray-500">
+      <div className="max-w-5xl mx-auto px-6 mt-20 text-center text-gray-500 dark:text-gray-400">
         Blog not found
       </div>
     );
@@ -38,15 +37,14 @@ const BlogDetail = () => {
 
   // Main layout of the blog detail page
   return (
-    <div className="min-h-screen bg-white text-gray-900 font-sans">
-      {/* Header component */}
-      <Header />
+    <div className="min-h-screen font-sans dark:bg-black dark:text-white">
+
 
       {/* Main content area for the blog */}
       <main className="max-w-5xl mx-auto md:px-6 pb-16">
-        <article className="mt-16 px-4 md:px-0 border-b border-gray-200">
+        <article className="mt-16 px-4 md:px-0 border-b border-gray-200 dark:border-white/10">
           {/* Publication and Author information */}
-          <div className="text-sm text-gray-600 mb-4">
+          <div className="text-sm text-gray-600 dark:text-gray-400 mb-4">
             <span className="font-medium">{blog.publication}</span>
             {blog.author && (
               <>
@@ -63,13 +61,13 @@ const BlogDetail = () => {
 
           {/* TLDR (Too Long; Didn't Read) summary */}
           {blog.tldr && (
-            <p className="text-lg text-gray-700 mb-6 max-w-3xl">
+            <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 max-w-3xl">
               <span className="font-semibold">TL;DR:</span> {blog.tldr}
             </p>
           )}
 
           {/* Date and Read Time meta information */}
-          <div className="flex items-center gap-4 text-sm text-gray-500 mb-10">
+          <div className="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400 mb-10">
             <span>{blog.date}</span>|
             <span>{blog.readTime}</span>
           </div>
@@ -79,23 +77,23 @@ const BlogDetail = () => {
             <div className="mb-10">
               <Link
                 to={`/project/${blog.relatedProject.id}`}
-                className="group inline-flex items-center gap-3 border border-gray-200 rounded-xl px-5 py-4 hover:border-gray-400 transition"
+                className="group inline-flex items-center gap-3 border border-gray-200 dark:border-white/10 rounded-xl px-5 py-4 hover:border-gray-400 dark:hover:border-white/30 transition"
               >
                 <div>
-                  <p className="text-xs uppercase tracking-wide text-gray-500 mb-1">
+                  <p className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400 mb-1">
                     Related Project
                   </p>
-                  <p className="text-lg font-medium text-gray-900 group-hover:underline">
+                  <p className="text-lg font-medium text-gray-900 dark:text-white group-hover:underline">
                     {blog.relatedProject.title}
                   </p>
                   {blog.relatedProject.description && (
-                    <p className="text-sm text-gray-600">
+                    <p className="text-sm text-gray-600 dark:text-gray-300">
                       {blog.relatedProject.description}
                     </p>
                   )}
                 </div>
 
-                <span className="ml-auto text-gray-400 group-hover:text-gray-600 transition">
+                <span className="ml-auto text-gray-400 dark:text-gray-500 group-hover:text-gray-600 dark:group-hover:text-gray-300 transition">
                   →
                 </span>
               </Link>
@@ -115,7 +113,7 @@ const BlogDetail = () => {
               />
 
               {blog.imageDescription && (
-                <p className="text-sm italic text-center text-gray-500 mb-8 max-w-3xl mx-auto">
+                <p className="text-sm italic text-center text-gray-500 dark:text-gray-400 mb-8 max-w-3xl mx-auto">
                   {blog.imageDescription}
                 </p>
               )}
@@ -132,7 +130,7 @@ const BlogDetail = () => {
                   return (
                     <h2
                       key={index}
-                      className="text-2xl text-start mt-12 mb-6 text-gray-900"
+                      className="text-2xl text-start mt-12 mb-6 text-gray-900 dark:text-white"
                     >
                       {block.text}
                     </h2>
@@ -152,7 +150,7 @@ const BlogDetail = () => {
                             loading="lazy"
                           />
                           {block.caption && (
-                            <figcaption className="mt-2 text-sm text-gray-500 text-center">
+                            <figcaption className="mt-2 text-sm text-gray-500 dark:text-gray-400 text-center">
                               {block.caption}
                             </figcaption>
                           )}
@@ -160,7 +158,7 @@ const BlogDetail = () => {
                       )}
 
                       <p
-                        className="text-gray-700 text-lg leading-relaxed"
+                        className="text-gray-700 dark:text-gray-300 text-lg leading-relaxed"
                         dangerouslySetInnerHTML={{
                           __html: renderWithHighlights(block.text),
                         }}
@@ -174,9 +172,9 @@ const BlogDetail = () => {
                   return (
                     <pre
                       key={index}
-                      className="bg-gray-50 border border-gray-200 rounded-lg p-5 mb-8 overflow-x-auto text-sm"
+                      className="bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-lg p-5 mb-8 overflow-x-auto text-sm"
                     >
-                      <code className="text-gray-800">{block.code}</code>
+                      <code className="text-gray-800 dark:text-gray-200">{block.code}</code>
                     </pre>
                   );
                 }
@@ -187,8 +185,7 @@ const BlogDetail = () => {
           </section>
         </article>
 
-        {/* Footer component */}
-        <Footer />
+
       </main>
     </div>
   );

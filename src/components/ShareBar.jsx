@@ -23,13 +23,13 @@ const ShareBar = ({ title }) => {
   };
 
   return (
-    <div className="flex items-center gap-3 text-sm text-gray-600 mb-12">
+    <div className="flex items-center gap-3 text-sm text-gray-600 dark:text-gray-400 mb-12">
       <span className="font-medium">Share:</span>
 
       {/* Copy Link Button */}
       <button
         onClick={copyLink}
-        className="p-2 border rounded-md hover:border-black transition"
+        className="p-2 border dark:border-neutral-700 rounded-md hover:border-black dark:hover:border-white transition"
         aria-label="Copy link"
       >
         <FaLink />
@@ -42,7 +42,7 @@ const ShareBar = ({ title }) => {
         )}`}
         target="_blank"
         rel="noopener noreferrer"
-        className="p-2 border rounded-md hover:border-black transition"
+        className="p-2 border dark:border-neutral-700 rounded-md hover:border-black dark:hover:border-white transition"
         aria-label="Share on LinkedIn"
       >
         <FaLinkedinIn />
@@ -55,7 +55,7 @@ const ShareBar = ({ title }) => {
         )}&text=${encodeURIComponent(title)}`}
         target="_blank"
         rel="noopener noreferrer"
-        className="p-2 border rounded-md hover:border-black transition"
+        className="p-2 border dark:border-neutral-700 rounded-md hover:border-black dark:hover:border-white transition"
         aria-label="Share on Twitter"
       >
         <FaXTwitter />
@@ -68,14 +68,14 @@ const ShareBar = ({ title }) => {
         )}`}
         target="_blank"
         rel="noopener noreferrer"
-        className="p-2 border rounded-md hover:border-black transition"
+        className="p-2 border dark:border-neutral-700 rounded-md hover:border-black dark:hover:border-white transition"
         aria-label="Share on WhatsApp"
       >
         <FaWhatsapp />
       </a>
 
       {/* "Copied" confirmation message */}
-      {copied && <span className="text-xs text-green-600">Copied</span>}
+      {copied && <span className="text-xs text-green-600 dark:text-green-400">Copied</span>}
     </div>
   );
 };

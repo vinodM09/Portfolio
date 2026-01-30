@@ -1,12 +1,12 @@
 export const skills = {
     skills: [
-      "React.js",
+      "React",
+      "Next.js",
+      "TypeScript",
       "Node.js",
       "Express.js",
       "MongoDB",
-      "TypeScript",
       "JavaScript",
-      "Next.js",
       "HTML",
       "CSS",
       "MySQL",
@@ -15,6 +15,7 @@ export const skills = {
       "Bootstrap CSS",
       "C++",
       "Python",
+      "Java",
       "Postman",
       "Hoppscotch",
       "Git",

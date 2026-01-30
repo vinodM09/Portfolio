@@ -35,16 +35,16 @@ const ServicesOffered = () => {
       {/* Services List */}
       <div className="space-y-6 text-start">
         {servicesData.map((service, index) => (
-          <div key={index} className="py-8 border-b border-gray-200">
+          <div key={index} className="py-8 border-b border-gray-200 dark:border-neutral-800">
             {/* Grid layout for each service item */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {/* Service Title */}
-              <h3 className="text-xl font-normal text-black pr-4">
+              <h3 className="text-xl font-normal text-black dark:text-white pr-4">
                 {service.title}
               </h3>
 
               {/* Service Description */}
-              <p className="text-base text-gray-700 font-light md:col-span-2">
+              <p className="text-base text-gray-700 dark:text-gray-300 font-light md:col-span-2">
                 {service.description}
               </p>
             </div>

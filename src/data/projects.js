@@ -41,15 +41,15 @@ export const projects = [
     ],
 
     // for featured work card
-    category: "Team Lead, Full Stack Development",
+    category: "React, Node.js, Express.js, MongoDB, TypeScript, JavaScript, Tailwind CSS, JWT, Nodemailer",
     imageUrl: "/images/isa/isahomepage_2.png",
     altText: "isa_banner",
-    tag: "Team Project (Upcoming)",
+    tag: "ISA-India (Upcoming)",
     imageBrightness: "dark", // 'dark' or 'light'
   },
   {
     id: "microgrids",
-    title: "Renewable Energy Monitoring System for Microgrids",
+    title: "Ecogrid",
     client: "Team Project",
     year: "2025",
     scope: "Hardware, Software, Full Stack Development",
@@ -79,13 +79,13 @@ export const projects = [
       "/images/monitoring/mschatbot.png"
     ],
     // for featured work card
-    category: "Renewable Energy, Real Time Monitoring",
+    category: "React, Node.js, Express.js, MongoDB, Groq",
     imageUrl: "/images/monitoring/mshome_.png",
     altText: "microgrids_banner",
-    tag: "Team Project",
+    tag: "SIH 2025",
     imageBrightness: "light", // 'dark' or 'light'
   },
-  {
+    {
     id: "travelcrm",
     title: "Travel CRM",
     client: "Personal Project",
@@ -136,15 +136,63 @@ export const projects = [
       "/images/travelcrm/tcrmcustomer.png",
     ],
     // for featued work card
-    category: "Deployment, Full Stack Development",
+    category: "AWS, Nginx, Node.js, Express.js, TypeScript, MongoDB, Tailwind CSS, OAuth 2.0",
     imageUrl: "/images/travelcrm/tcrmlogin.png",
     altText: "travelcrm_banner",
     tag: "Personal Project",
     imageBrightness: "light", // 'dark' or 'light'
   },
+    {
+  id: "travel-booking",
+  title: "Roamly",
+  client: "Personal Project",
+  year: "2026",
+  scope: "Frontend, Backend, Full Stack Development",
+  overview:
+    "A modern travel booking platform designed to deliver a refined and seamless booking experience, featuring destination discovery, trip listings, booking workflows, and an admin management system.",
+
+  description: `Roamly is a full-stack travel booking platform built to provide a premium and intuitive travel planning experience. The platform enables users to explore destinations, view detailed trip packages, and make bookings through a clean and responsive interface optimized for performance and usability.
+  
+  The application features dynamic destination and package pages powered by server-side rendering and modern routing, ensuring fast load times and strong SEO performance. A dedicated Admin Panel allows administrators to manage destinations, trip packages, pricing, availability, and featured listings through secure backend APIs.
+  
+  The backend is implemented using API routes connected to MongoDB with well-structured schemas, handling booking data, user interactions, and content management. Secure authentication and authorization mechanisms protect sensitive routes and admin operations.
+  
+  Tailwind CSS and component-based UI design ensure a consistent, elegant layout across devices. Roamly demonstrates core full-stack concepts including API design, database modeling, dynamic routing, role-based access control, and scalable application architecture, while maintaining a polished, luxury-focused user experience.`,
+
+  techStack: [
+    "Next.js",
+    "React.js",
+    "TypeScript",
+    "MongoDB",
+    "Mongoose",
+    "Cloudinary",
+    "Tailwind CSS",
+    "JavaScript",
+    "API Routes",
+    "Node.js",
+    "JWT",
+    "Server-Side Rendering",
+  ],
+
+  // liveLink: `${VITE_TCRM_LIVE_LINK}`,
+  githubRepoLink: `${VITE_TCRM_GITHUB_LINK}`,
+
+  gallery: [
+    "/images/travelweb/travel_home_page.png",
+    "/images/travelweb/travel_home2.png",
+    "/images/travelweb/travel_home3.png",
+  ],
+
+  // for featured work card
+  category: "AWS, Nginx, Node.js, Express.js, TypeScript, MongoDB, Tailwind CSS, OAuth 2.0",
+  imageUrl: "/images/travelweb/travel_home_page.png",
+  altText: "roamly_travel_banner",
+  tag: "Personal Project",
+  imageBrightness: "dark", // 'dark' or 'light'
+},
   {
     id: "shopping-app",
-    title: "Next.js Shopping App",
+    title: "Cartiqo",
     client: "Personal Project",
     year: "2025",
     scope: "Frontend, Backend, Full Stack Development",
@@ -161,7 +209,6 @@ export const projects = [
 
     techStack: [
       "Next.js",
-      "React.js",
       "TypeScript",
       "MongoDB",
       "Mongoose",
@@ -183,10 +230,10 @@ export const projects = [
     ],
 
     // for featured work card
-    category: "Full Stack Development, E-commerce",
+    category: "Next.js",
     imageUrl: "/images/shopping/shop_product_detail.png",
     altText: "shopping_app_banner",
     tag: "Personal Project",
-    imageBrightness: "light", // 'dark' or 'light'
+    imageBrightness: "dark", // 'dark' or 'light'
   }
 ];

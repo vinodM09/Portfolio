@@ -3,8 +3,7 @@ import { Link } from "react-router-dom";
 
 // Data and component imports
 import { blogs } from "../data/blogs";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+
 
 /**
  * Blogs Component
@@ -18,12 +17,11 @@ const Blogs = () => {
 
   // Main structure of the Blogs page
   return (
-    <div className="min-h-screen bg-white text-gray-900 font-sans">
-      {/* Header component */}
-      <Header />
+    <div className="min-h-screen font-sans">
+
 
       {/* Main content area for blog listings */}
-      <main className="max-w-5xl mx-auto px-6 pb-16 border-b border-gray-200">
+      <main className="max-w-5xl mx-auto px-6 pb-16">
         {/* Section displaying the list of blog posts */}
         <section className="pb-10">
           {blogs.map((blog, index) => (
@@ -35,35 +33,27 @@ const Blogs = () => {
             >
               {/* Individual blog post article */}
               <article
-                className={`flex items-center gap-6 py-8 ${index !== 0 ? "border-t border-gray-200" : ""
+                className={`flex items-center gap-6 py-8 ${index !== 0 ? "border-t border-gray-200 dark:border-neutral-800" : ""
                   }`}
               >
                 {/* Left content area of the blog card (text details) */}
                 <div className="flex-1">
                   {/* Publication and Author details */}
-                  <div className="text-sm text-gray-600 mb-2">
-                    <span className="font-medium">{blog.publication}</span>
-                    {blog.author && (
-                      <>
-                        <span className="mx-1">by</span>
-                        <span className="font-medium">{blog.author}</span>
-                      </>
-                    )}
-                  </div>
+
 
                   {/* Blog Title */}
-                  <h2 className="text-2xl font-semibold leading-snug mb-2">
+                  <h2 className="text-2xl font-semibold leading-snug mb-2 dark:text-white">
                     {blog.title}
                   </h2>
 
                   {/* TLDR or Excerpt of the blog post */}
-                  <p className="text-gray-700 mb-4 line-clamp-2">
-                    <span className="font-medium">TL;DR:</span>{" "}
+                  <p className="text-gray-700 dark:text-gray-300 mb-4 line-clamp-2">
+                    <span className="font-medium">tldr;</span>{" "}
                     {blog.tldr}
                   </p>
 
                   {/* Blog Post Date */}
-                  <div className="text-sm text-gray-500">
+                  <div className="text-sm text-gray-500 dark:text-gray-400">
                     <span>{blog.date}</span>
                   </div>
                 </div>
@@ -83,8 +73,7 @@ const Blogs = () => {
 
       </main>
 
-      {/* Footer component */}
-      <Footer />
+
     </div>
   );
 };

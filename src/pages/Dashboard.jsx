@@ -1,12 +1,10 @@
 import React, { useEffect } from 'react';
-import Header from '../components/Header';
+
 import HeroSection from '../components/HeroSection';
 import FeaturedWork from '../components/FeaturedWork';
-import Footer from '../components/Footer';
 import TechSpecs from '../components/TechSpecs';
 import { skills } from '../data/techSpecs';
 import { useLocation } from 'react-router-dom';
-import ContactMe from '../components/ContactMe';
 import FeaturedBlogs from '../components/FeaturedBlogs';
 
 export default function Dashboard() {
@@ -21,9 +19,8 @@ export default function Dashboard() {
     }
   }, [location]);
   return (
-    <div className="min-h-screen bg-white text-gray-900 font-sans">
-      {/* Header */}
-      <Header />
+    <div className="min-h-screen font-sans">
+
 
       <main className="max-w-5xl mx-auto md:px-6">
         {/* Hero */}
@@ -38,11 +35,7 @@ export default function Dashboard() {
         {/* Skills Section */}
         <TechSpecs skills={skills.skills || []} />
 
-        {/* Contact */}
-        <ContactMe />
 
-        {/* Footer */}
-        <Footer />
       </main>
     </div>
   );

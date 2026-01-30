@@ -23,13 +23,13 @@ const RelatedBlogs = ({ projectId }) => {
 
     return (
         <section className="max-w-7xl mx-auto px-4 md:px-0 pt-10">
-            <div className="border-b border-gray-200 pb-10">
+            <div className="border-b border-gray-200 dark:border-neutral-800 pb-10">
                 {/* Section Header */}
                 <div className="flex items-center justify-between mb-6">
                     <h2 className="text-3xl font-normal">Related Blogs</h2>
                     <Link
                         to="/blogs"
-                        className="text-sm text-gray-700 hover:text-black hover:underline transition"
+                        className="text-sm text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white hover:underline transition"
                     >
                         View all
                     </Link>
@@ -47,7 +47,7 @@ const RelatedBlogs = ({ projectId }) => {
                                     {/* Left Content */}
                                     <div className="flex-1">
                                         {/* Publication / Author */}
-                                        <div className="text-sm text-gray-600 mb-2">
+                                        <div className="text-sm text-gray-600 dark:text-gray-400 mb-2">
                                             <span className="font-medium">{blog.publication}</span>
                                             {blog.author && (
                                                 <>
@@ -63,13 +63,13 @@ const RelatedBlogs = ({ projectId }) => {
                                         </h3>
 
                                         {/* TLDR / Excerpt */}
-                                        <p className="text-gray-700 mb-4 line-clamp-2">
+                                        <p className="text-gray-700 dark:text-gray-300 mb-4 line-clamp-2">
                                             <span className="font-medium">TL;DR:</span>{" "}
                                             {blog.tldr || "Short summary of what this blog is about."}
                                         </p>
 
                                         {/* Meta */}
-                                        <div className="flex items-center gap-4 text-sm text-gray-500">
+                                        <div className="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400">
                                             <span>{blog.date || "Date"}</span>
                                         </div>
                                     </div>
@@ -86,7 +86,7 @@ const RelatedBlogs = ({ projectId }) => {
                             </Link>
                             {/* Add HR between blogs, but not after the last one */}
                             {index < relatedBlogs.length - 1 && (
-                                <hr className="border-gray-200" />
+                                <hr className="border-gray-200 dark:border-neutral-800" />
                             )}
                         </React.Fragment>
                     ))}

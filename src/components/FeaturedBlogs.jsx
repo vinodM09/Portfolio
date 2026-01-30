@@ -25,7 +25,7 @@ const FeaturedBlogs = () => {
         <h2 className="text-3xl font-normal">Technical Blogs</h2>
         <Link
           to="/blogs"
-          className="text-sm text-gray-700 hover:text-black hover:underline transition"
+          className="text-sm text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white hover:underline transition"
         >
           View all
         </Link>
@@ -43,29 +43,21 @@ const FeaturedBlogs = () => {
                 {/* Left Content */}
                 <div className="flex-1">
                   {/* Publication / Author */}
-                  <div className="text-sm text-gray-600 mb-2">
-                    <span className="font-medium">{blog.publication}</span>
-                    {blog.author && (
-                      <>
-                        <span className="mx-1">by</span>
-                        <span className="font-medium">{blog.author}</span>
-                      </>
-                    )}
-                  </div>
+
 
                   {/* Title */}
-                  <h3 className="text-2xl font-semibold leading-snug mb-2 hover:underline">
+                  <h3 className="text-2xl font-semibold leading-snug mb-2 hover:underline dark:text-white">
                     {blog.title || "Blog title"}
                   </h3>
 
                   {/* TLDR / Excerpt */}
-                  <p className="text-gray-700 mb-4 line-clamp-2">
+                  <p className="text-gray-700 dark:text-gray-300 mb-4 line-clamp-2">
                     <span className="font-medium">TL;DR:</span>{" "}
                     {blog.tldr || "Short summary of what this blog is about."}
                   </p>
 
                   {/* Meta */}
-                  <div className="flex items-center gap-4 text-sm text-gray-500">
+                  <div className="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400">
                     <span>{blog.date || "Date"}</span>
                   </div>
                 </div>
@@ -82,7 +74,7 @@ const FeaturedBlogs = () => {
             </Link>
             {/* Add HR between blogs, but not after the last one */}
             {index < featuredBlogs.length - 1 && (
-              <hr className="border-gray-200" />
+              <hr className="border-gray-200 dark:border-neutral-800" />
             )}
           </React.Fragment>
         ))}
