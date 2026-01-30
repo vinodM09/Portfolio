@@ -51,7 +51,7 @@ const FeaturedBlogs = () => {
                   </h3>
 
                   {/* TLDR / Excerpt */}
-                  <p className="text-gray-700 dark:text-gray-300 mb-4 line-clamp-2">
+                  <p className="text-gray-700 hidden md:block dark:text-gray-300 mb-4 line-clamp-2">
                     <span className="font-medium">TL;DR:</span>{" "}
                     {blog.tldr || "Short summary of what this blog is about."}
                   </p>
