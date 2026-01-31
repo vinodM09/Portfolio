@@ -5,7 +5,7 @@ import FeaturedWork from '../components/FeaturedWork';
 import TechSpecs from '../components/TechSpecs';
 import { skills } from '../data/techSpecs';
 import { useLocation } from 'react-router-dom';
-import FeaturedBlogs from '../components/FeaturedBlogs';
+
 
 export default function Dashboard() {
   const location = useLocation();
@@ -29,8 +29,7 @@ export default function Dashboard() {
         {/* Featured Work */}
         <FeaturedWork />
 
-        {/* Featured Blogs */}
-        <FeaturedBlogs />
+
 
         {/* Skills Section */}
         <TechSpecs skills={skills.skills || []} />

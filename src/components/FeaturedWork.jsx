@@ -31,7 +31,7 @@ const FeaturedWork = () => {
       </div>
 
       {/* Projects Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 border-b border-gray-200 dark:border-neutral-800 py-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 border-b md:border-b-0 border-gray-200 dark:border-neutral-800 py-10">
         {featuredProjects.map((project, index) => (
           // Link to the individual project detail page
           <Link

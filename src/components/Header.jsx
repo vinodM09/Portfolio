@@ -84,7 +84,7 @@ export default function Header() {
         <div className="flex items-center space-x-2">
           <button
             onClick={handleCopy}
-            className="text-sm border dark:border-gray-600 px-3 py-1 rounded-full opacity-60 text-gray-700 dark:text-gray-300"
+            className="text-sm border dark:border-gray-600 px-3 py-1 rounded-lg opacity-60 text-gray-700 dark:text-gray-300"
           >
             snvinod09@gmail.com
           </button>
@@ -137,7 +137,7 @@ export default function Header() {
 
           <button
             onClick={handleCopy}
-            className="text-sm border dark:border-gray-600 px-3 py-1 rounded-full opacity-60 text-gray-700 dark:text-gray-300"
+            className="text-sm border dark:border-gray-600 px-3 py-1 rounded-lg opacity-60 text-gray-700 dark:text-gray-300"
           >
             snvinod09@gmail.com
           </button>

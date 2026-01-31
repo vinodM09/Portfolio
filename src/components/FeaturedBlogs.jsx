@@ -19,7 +19,7 @@ const FeaturedBlogs = () => {
   const featuredBlogs = blogs.slice(0, 3);
 
   return (
-    <section id="blogs" className="mt-10 max-w-7xl mx-auto px-4 md:px-0">
+    <section id="blogs" className="hidden md:block mt-10 max-w-7xl mx-auto px-4 md:px-0">
       {/* Section Header */}
       <div className="flex items-center justify-between">
         <h2 className="text-xl md:text-3xl font-normal pb-4 md:pb-0">Technical Blogs</h2>

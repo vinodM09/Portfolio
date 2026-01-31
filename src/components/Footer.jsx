@@ -15,12 +15,12 @@ const Footer = () => {
 
   return (
     // Footer container
-    <footer className="pb-20 max-w-5xl mx-auto md:px-6 text-center text-gray-600 dark:text-gray-400">
+    <footer className="max-w-5xl mx-auto md:px-6 text-center text-gray-600 dark:text-gray-400">
       {/* Top Section: Contact, Navigation, and Social Links */}
-      <div className="max-w-5xl mx-auto flex px-4 md:px-0 flex-col md:flex-row justify-between items-start md:items-center py-8 border-t border-gray-200 dark:border-neutral-800 border-b border-gray-200 dark:border-neutral-800">
+      <div className="max-w-5xl mx-auto flex px-4 md:px-0 flex-col md:flex-row justify-between items-start md:items-center py-8 border-t border-gray-200 dark:border-neutral-800">
         {/* Contact Information */}
         <div className="mb-8 md:mb-0 text-start">
-          <p className="text-base md:text-lg text-gray-700 dark:text-gray-300 font-light mb-1">
+          <p className="text-base md:text-lg text-gray-700 dark:text-gray-300 font-light">
             Get in touch with me at
           </p>
           <a
@@ -33,20 +33,20 @@ const Footer = () => {
 
         {/* Navigation Links */}
         <nav className="items-center space-x-6 hidden sm:flex">
-          <a
-            href="#projects"
+          <Link
+            to="/projects"
             className="hover:underline text-gray-700 dark:text-gray-300"
             style={{ opacity: "0.6" }}
           >
             Projects
-          </a>
-          <a
-            href="#blogs"
+          </Link>
+          <Link
+            to="/blogs"
             className="hover:underline text-gray-700 dark:text-gray-300"
             style={{ opacity: "0.6" }}
           >
             Blogs
-          </a>
+          </Link>
           <Link
             to="/contact"
             className="hover:underline text-gray-700 dark:text-gray-300"
@@ -100,14 +100,14 @@ const Footer = () => {
       </div>
 
       {/* Bottom Section: Copyright */}
-      <div className="max-w-7xl mx-auto py-3 text-center text-xs md:text-sm text-gray-500 dark:text-gray-400">
+      {/* <div className="max-w-7xl mx-auto py-3 text-center text-xs md:text-sm text-gray-500 dark:text-gray-400">
         <p>
           © {(() => {
             const currentYear = new Date().getFullYear();
             return currentYear === 2025 ? "2025" : `2025-${currentYear}`;
           })()} Vinod Mali
         </p>
-      </div>
+      </div> */}
     </footer>
   );
 };
